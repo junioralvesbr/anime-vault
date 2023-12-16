@@ -2,8 +2,8 @@ import Image from "next/image";
 
 export function Hero() {
   return (
-    <div className="h-[70vh] flex justify-center items-center bg-hero bg-zinc-900 bg-cover bg-top">
-      <div className="flex flex-col gap-6 items-center justify-center sm:flex-row">
+    <div className="h-[80vh] flex justify-center items-center bg-hero bg-zinc-900 bg-cover bg-top">
+      <div className="flex flex-col gap-6 items-center justify-center px-4 sm:flex-row">
         <div className="flex flex-col gap-10 flex-1">
           <Image
             src="/logo.svg"
@@ -20,7 +20,7 @@ export function Hero() {
           </h1>
         </div>
 
-        <div className="relative w-full h-[50vh] flex-1">
+        <div className="relative w-full h-[50vh] sm:flex-1">
           <Image
             src="/anime.png"
             alt="Imagem do anime da pagina"

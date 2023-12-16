@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans } from 'next/font/google'
 import './globals.css'
+import { Footer } from '@/components/Footer'
 
 const dmSans = DM_Sans({ subsets: ['latin'] })
 
@@ -16,7 +17,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={dmSans.className}>{children}</body>
+      <body className={dmSans.className}>
+        {children}
+        <footer>
+          <Footer />
+        </footer>
+      </body>
     </html>
   )
 }
