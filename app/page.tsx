@@ -26,7 +26,7 @@ export default async function Home() {
 
           <div className="grid grid-cols-4 gap-14 mt-10">
             {allanime.map((anime, index: number) => (
-              <AnimeCard anime={anime} index={index} />
+              <AnimeCard anime={anime} key={index} />
             ))}
           </div>
         </section>

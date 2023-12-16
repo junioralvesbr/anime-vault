@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-export function AnimeCard({ anime, index }) {
+export function AnimeCard({ anime }) {
   return (
-    <article key={index} className="flex flex-col gap-2 max-w-[280px]">
+    <article className="flex flex-col gap-2 max-w-[280px]">
       <div className="relative w-full h-[37vh] overflow-hidden rounded-xl">
         <Image
           src={`https://shikimori.one/${anime.image.original}`}
