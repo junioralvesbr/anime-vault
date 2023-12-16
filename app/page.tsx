@@ -1,5 +1,6 @@
 import { AnimeCard } from "@/components/AnimeCard";
 import { Hero } from "@/components/Hero";
+import { Loading } from "@/components/Loading";
 import Image from "next/image";
 
 const getAllAnime = async () => {
@@ -28,6 +29,10 @@ export default async function Home() {
             {allanime.map((anime, index: number) => (
               <AnimeCard anime={anime} key={index} />
             ))}
+          </div>
+
+          <div className="flex justify-center mt-10">
+            <Loading />
           </div>
         </section>
       </main>
