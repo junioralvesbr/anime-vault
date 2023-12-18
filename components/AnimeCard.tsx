@@ -1,6 +1,22 @@
 import Image from "next/image";
 
-export function AnimeCard({ anime }) {
+export type AnimeProp = {
+  id: string,
+  name: string,
+  image: {
+    original: string
+  },
+  kind: string,
+  episodes: number,
+  score: number
+}
+
+type Prop = {
+  anime: AnimeProp,
+  index: number,
+}
+
+export function AnimeCard({ anime }: Prop) {
   return (
     <article className="flex flex-col gap-2 max-w-[280px]">
       <div className="relative w-full h-[37vh] overflow-hidden rounded-xl">

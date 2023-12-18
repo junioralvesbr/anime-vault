@@ -1,7 +1,6 @@
-import { AnimeCard } from "@/components/AnimeCard";
+import { AnimeCard, AnimeProp } from "@/components/AnimeCard";
 import { Hero } from "@/components/Hero";
 import { Loading } from "@/components/Loading";
-import Image from "next/image";
 
 const getAllAnime = async () => {
   const response = await fetch("https://shikimori.one/api/animes?page=1&limit=8&order=popularity")
@@ -12,7 +11,7 @@ const getAllAnime = async () => {
 }
 
 export default async function Home() {
-  const allanime = await getAllAnime()
+  const allAnime = await getAllAnime()
 
   return (
     <>
@@ -26,8 +25,8 @@ export default async function Home() {
           </h2>
 
           <div className="grid grid-cols-4 gap-14 mt-10">
-            {allanime.map((anime, index: number) => (
-              <AnimeCard anime={anime} key={index} />
+            {allAnime.map((anime: AnimeProp, index: number) => (
+              <AnimeCard anime={anime} index={index} key={index} />
             ))}
           </div>
 
