@@ -11,9 +11,7 @@ let page = 2
 export function LoadingMore() {
   const [data, setData] = useState<AnimeProp[]>([])
 
-  const [ref, inView] = useInView({
-    threshold: 0
-  })
+  const [ref, inView] = useInView({ threshold: 0, trackVisibility: true, delay: 500 })
 
   useEffect(() => {
     if (inView) {
@@ -24,12 +22,11 @@ export function LoadingMore() {
       })
 
     }
-
   }, [inView])
 
   return (
     <div>
-      <div className="grid grid-cols-4 gap-14 mt-10">
+      <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-14 mt-10">
         {data.map(anime => (
           <AnimeCard anime={anime} />
         ))}
