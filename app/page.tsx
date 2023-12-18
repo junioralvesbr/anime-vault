@@ -1,17 +1,10 @@
-import { AnimeCard, AnimeProp } from "@/components/AnimeCard";
 import { Hero } from "@/components/Hero";
-import { Loading } from "@/components/Loading";
-
-const getAllAnime = async () => {
-  const response = await fetch("https://shikimori.one/api/animes?page=1&limit=8&order=popularity")
-
-  const data = await response.json()
-
-  return data
-}
+import { AnimeCard, AnimeProp } from "@/components/AnimeCard";
+import { LoadingMore } from "@/components/LoadingMore";
+import fetchAnime from "@/lib/fetchAnime";
 
 export default async function Home() {
-  const allAnime = await getAllAnime()
+  const allAnime = await fetchAnime(1)
 
   return (
     <>
@@ -30,9 +23,8 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="flex justify-center mt-10">
-            <Loading />
-          </div>
+          <LoadingMore />
+
         </section>
       </main>
     </>

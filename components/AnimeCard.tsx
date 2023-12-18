@@ -13,7 +13,7 @@ export type AnimeProp = {
 
 type Prop = {
   anime: AnimeProp,
-  index: number,
+  index?: number,
 }
 
 export function AnimeCard({ anime }: Prop) {
